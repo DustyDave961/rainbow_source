@@ -1,16 +1,24 @@
 
 local source_list = {
-	{"black", "Darkened", "292421",}, {"blue", "Blue", "0000FF",},
-	{"cyan", "Cyan", "00FFFF",}, {"green", "Green", "00FF00",}, 
-	{"magenta", "Magenta", "FF00FF",}, {"orange", "Orange", "FF6103",}, 
-	{"purple", "Purple", "800080",}, {"red", "Red", "FF0000",}, 
-	{"yellow", "Yellow", "FFFF00",}, {"frosted", "Frosted", "FFFFFF",}
+	{"black", "Darkened", "292421", 40, 36, 33}, 
+	{"blue", "Blue", "0000FF", 0, 0, 255},
+	{"cyan", "Cyan", "00FFFF", 0, 255, 255}, 
+	{"green", "Green", "00FF00", 0, 255, 0}, 
+	{"magenta", "Magenta", "FF00FF", 255, 0, 255}, 
+	{"orange", "Orange", "FF6103", 255, 97, 3}, 
+	{"purple", "Purple", "800080", 128, 0, 128}, 
+	{"red", "Red", "FF0000", 255, 0, 0}, 
+	{"yellow", "Yellow", "FFFF00", 255, 255, 0}, 
+	{"frosted", "Frosted", "FFFFFF", 255, 255, 255}
 }
 
 for i in ipairs(source_list) do
 	local name = source_list[i][1]
 	local description = source_list[i][2]
 	local colour = source_list[i][3]
+	local red = source_list[i][4]
+	local green = source_list[i][5]
+	local blue = source_list[i][6]	
 
 	minetest.register_node("rainbow_source:"..name.."_water_source", {
 		description = description.." Water Source",
@@ -51,7 +59,7 @@ for i in ipairs(source_list) do
 		liquid_alternative_flowing = "rainbow_source:"..name.."_water_flowing",
 		liquid_alternative_source = "rainbow_source:"..name.."_water_source",
 		liquid_viscosity = 1,
-		post_effect_color = {a = 103, r = 30, g = 60, b = 90},
+		post_effect_color = {a = 50, r = red, g = green, b = blue},
 		groups = {water = 3, liquid = 3, puts_out_fire = 1, cools_lava = 1},
 		sounds = default.node_sound_water_defaults(),
 	})
@@ -96,7 +104,7 @@ for i in ipairs(source_list) do
 		liquid_alternative_flowing = "rainbow_source:"..name.."_water_flowing",
 		liquid_alternative_source = "rainbow_source:"..name.."_water_source",
 		liquid_viscosity = 1,
-		post_effect_color = {a = 103, r = 30, g = 60, b = 90},
+		post_effect_color = {a = 50, r = red, g = green, b = blue},
 		groups = {water = 3, liquid = 3, puts_out_fire = 1,
 			not_in_creative_inventory = 1, cools_lava = 1},
 		sounds = default.node_sound_water_defaults(),
