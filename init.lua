@@ -17,7 +17,7 @@ for i in ipairs(source_list) do
 		drawtype = "liquid",
 		tiles = {
 			{
-				name = "rs_water_source_animated.png^[colorize:#"..colour..":122",
+				name = "rs_water_source_animated.png^[colorize:#"..colour..":70",
 				animation = {
 					type = "vertical_frames",
 					aspect_w = 16,
@@ -28,7 +28,7 @@ for i in ipairs(source_list) do
 		},
 		special_tiles = {
 			{
-				name = "rs_water_source_animated.png^[colorize:#"..colour..":122",
+				name = "rs_water_source_animated.png^[colorize:#"..colour..":70",
 				animation = {
 					type = "vertical_frames",
 					aspect_w = 16,
@@ -62,7 +62,7 @@ for i in ipairs(source_list) do
 		tiles = {"rs_water.png^[colorize:#"..colour},
 		special_tiles = {
 			{
-				name = "rs_water_flowing_animated.png^[colorize:#"..colour..":122",
+				name = "rs_water_flowing_animated.png^[colorize:#"..colour..":70",
 				backface_culling = false,
 				animation = {
 					type = "vertical_frames",
@@ -72,7 +72,7 @@ for i in ipairs(source_list) do
 				},
 			},
 			{
-				name = "rs_water_flowing_animated.png^[colorize:#"..colour..":122",
+				name = "rs_water_flowing_animated.png^[colorize:#"..colour..":70",
 				backface_culling = true,
 				animation = {
 					type = "vertical_frames",
