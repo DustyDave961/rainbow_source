@@ -1,4 +1,4 @@
-# MIT license
+# MIT License
 
 ## Textures
 rs_water.png
