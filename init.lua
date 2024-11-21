@@ -18,7 +18,7 @@ for i in ipairs(source_list) do
 	local colour = source_list[i][3]
 	local red = source_list[i][4]
 	local green = source_list[i][5]
-	local blue = source_list[i][6]	
+	local blue = source_list[i][6]
 
 	minetest.register_node("rainbow_source:"..name.."_water_source", {
 		description = description.." Water Source",
@@ -46,7 +46,7 @@ for i in ipairs(source_list) do
 				backface_culling = false,
 			},
 		},
-		alpha = 160,
+		use_texture_alpha = "blend",
 		paramtype = "light",
 		walkable = false,
 		pointable = false,
@@ -60,7 +60,8 @@ for i in ipairs(source_list) do
 		liquid_alternative_source = "rainbow_source:"..name.."_water_source",
 		liquid_viscosity = 1,
 		post_effect_color = {a = 50, r = red, g = green, b = blue},
-		groups = {water = 3, liquid = 3, puts_out_fire = 1, cools_lava = 1},
+		groups = {water = 3, liquid = 3, puts_out_fire = 1,
+				cools_lava = 1, rad_resistance = 5.6},
 		sounds = default.node_sound_water_defaults(),
 	})
 
@@ -90,7 +91,7 @@ for i in ipairs(source_list) do
 				},
 			},
 		},
-		alpha = 160,
+		use_texture_alpha = "blend",
 		paramtype = "light",
 		paramtype2 = "flowingliquid",
 		walkable = false,
@@ -105,16 +106,8 @@ for i in ipairs(source_list) do
 		liquid_alternative_source = "rainbow_source:"..name.."_water_source",
 		liquid_viscosity = 1,
 		post_effect_color = {a = 50, r = red, g = green, b = blue},
-		groups = {water = 3, liquid = 3, puts_out_fire = 1,
+		groups = {water = 3, liquid = 3, puts_out_fire = 1, rad_resistance = 2.8,
 			not_in_creative_inventory = 1, cools_lava = 1},
 		sounds = default.node_sound_water_defaults(),
 	})
-
-
-
-
-
-
-
-
 end
