@@ -1,15 +1,15 @@
 
 local source_list = {
-	{"black", "Darkened", "292421", 40, 36, 33}, 
+	{"black", "Darkened", "292421", 40, 36, 33},
 	{"blue", "Blue", "0000FF", 0, 0, 255},
-	{"cyan", "Cyan", "00FFFF", 0, 255, 255}, 
-	{"green", "Green", "00FF00", 0, 255, 0}, 
-	{"magenta", "Magenta", "FF00FF", 255, 0, 255}, 
-	{"orange", "Orange", "FF6103", 255, 97, 3}, 
-	{"purple", "Purple", "800080", 128, 0, 128}, 
-	{"red", "Red", "FF0000", 255, 0, 0}, 
-	{"yellow", "Yellow", "FFFF00", 255, 255, 0}, 
-	{"frosted", "Frosted", "FFFFFF", 255, 255, 255}
+	{"cyan", "Cyan", "00FFFF", 0, 255, 255, "turquoise"},
+	{"green", "Green", "00FF00", 0, 255, 0},
+	{"magenta", "Magenta", "FF00FF", 255, 0, 255},
+	{"orange", "Orange", "FF6103", 255, 97, 3},
+	{"purple", "Purple", "800080", 128, 0, 128, "violet"},
+	{"red", "Red", "FF0000", 255, 0, 0},
+	{"yellow", "Yellow", "FFFF00", 255, 255, 0},
+	{"frosted", "Frosted", "FFFFFF", 255, 255, 255, "white"}
 }
 
 for i in ipairs(source_list) do
@@ -19,6 +19,7 @@ for i in ipairs(source_list) do
 	local red = source_list[i][4]
 	local green = source_list[i][5]
 	local blue = source_list[i][6]
+	local dye = source_list[i][7] or name
 
 	minetest.register_node("rainbow_source:"..name.."_water_source", {
 		description = description.." Water Source",
@@ -110,4 +111,25 @@ for i in ipairs(source_list) do
 			not_in_creative_inventory = 1, cools_lava = 1},
 		sounds = default.node_sound_water_defaults(),
 	})
+
+	if minetest.get_modpath("fluid_lib") and minetest.get_modpath("bucket") then
+		bucket.register_liquid(
+			"rainbow_source:"..name.."_water_source",
+			"rainbow_source:"..name.."_water_flowing",
+			"rainbow_source:bucket_"..name.."_water",
+			"#"..colour,
+			description.." Water Bucket",
+			{water_bucket = 1}
+		)
+
+		if minetest.get_modpath("dye") then
+			minetest.register_craft({
+				output = "rainbow_source:bucket_"..name.."_water",
+				recipe = {
+						{"dye:"..dye},
+						{"group:water_bucket"}
+					}
+			})
+		end
+	end
 end
