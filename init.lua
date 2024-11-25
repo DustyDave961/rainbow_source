@@ -21,7 +21,7 @@ for i in ipairs(source_list) do
 	local blue = source_list[i][6]
 	local dye = source_list[i][7] or name
 
-	minetest.register_node("rainbow_source:"..name.."_water_source", {
+	core.register_node("rainbow_source:"..name.."_water_source", {
 		description = description.." Water Source",
 		drawtype = "liquid",
 		tiles = {
@@ -66,7 +66,7 @@ for i in ipairs(source_list) do
 		sounds = default.node_sound_water_defaults(),
 	})
 
-	minetest.register_node("rainbow_source:"..name.."_water_flowing", {
+	core.register_node("rainbow_source:"..name.."_water_flowing", {
 		description = description.." Flowing Water",
 		drawtype = "flowingliquid",
 		tiles = {"rs_water.png^[colorize:#"..colour},
@@ -112,7 +112,7 @@ for i in ipairs(source_list) do
 		sounds = default.node_sound_water_defaults(),
 	})
 
-	if minetest.get_modpath("fluid_lib") and minetest.get_modpath("bucket") then
+	if core.get_modpath("fluid_lib") and core.get_modpath("bucket") then
 		bucket.register_liquid(
 			"rainbow_source:"..name.."_water_source",
 			"rainbow_source:"..name.."_water_flowing",
@@ -122,8 +122,8 @@ for i in ipairs(source_list) do
 			{water_bucket = 1}
 		)
 
-		if minetest.get_modpath("dye") then
-			minetest.register_craft({
+		if core.get_modpath("dye") then
+			core.register_craft({
 				output = "rainbow_source:bucket_"..name.."_water",
 				recipe = {
 						{"dye:"..dye},
