@@ -62,7 +62,7 @@ for i in ipairs(source_list) do
 		liquid_viscosity = 1,
 		post_effect_color = {a = 50, r = red, g = green, b = blue},
 		groups = {water = 3, liquid = 3, puts_out_fire = 1,
-				cools_lava = 1, rad_resistance = 5.6},
+				cools_lava = 1},
 		sounds = default.node_sound_water_defaults(),
 	})
 
@@ -107,12 +107,12 @@ for i in ipairs(source_list) do
 		liquid_alternative_source = "rainbow_source:"..name.."_water_source",
 		liquid_viscosity = 1,
 		post_effect_color = {a = 50, r = red, g = green, b = blue},
-		groups = {water = 3, liquid = 3, puts_out_fire = 1, rad_resistance = 2.8,
+		groups = {water = 3, liquid = 3, puts_out_fire = 1,
 			not_in_creative_inventory = 1, cools_lava = 1},
 		sounds = default.node_sound_water_defaults(),
 	})
 
-	if core.get_modpath("fluid_lib") and core.get_modpath("bucket") then
+	if core.get_modpath("fluid_lib") and core.get_modpath("bucket_compat") then
 		bucket.register_liquid(
 			"rainbow_source:"..name.."_water_source",
 			"rainbow_source:"..name.."_water_flowing",
