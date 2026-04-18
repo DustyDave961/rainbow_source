@@ -112,6 +112,7 @@ for i in ipairs(source_list) do
 		sounds = default.node_sound_water_defaults(),
 	})
 
+	--Buckets (new feature by DustyDave961)
 	if core.get_modpath("fluid_lib") and core.get_modpath("bucket_compat") then
 		bucket.register_liquid(
 			"rainbow_source:"..name.."_water_source",
