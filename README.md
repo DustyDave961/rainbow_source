@@ -1,0 +1,1 @@
+Fork of Rainbow Source by Shara compatibile with Luanti versions after 5.4.0. I also added craftable water buckets for each water color. Unfortunately, I'm bad at making textures, so for now fluid_lib is required for the buckets.
