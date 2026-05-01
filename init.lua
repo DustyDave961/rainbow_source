@@ -1,3 +1,4 @@
+--Water definitions
 local source_list = {
 	{"black", "Darkened", "292421", 40, 36, 33},
 	{"blue", "Blue", "0000FF", 0, 0, 255},
@@ -20,6 +21,7 @@ for i in ipairs(source_list) do
 	local blue = source_list[i][6]
 	local dye = source_list[i][7] or name
 
+	--Register water source nodes
 	core.register_node("rainbow_source:"..name.."_water_source", {
 		description = description.." Water Source",
 		drawtype = "liquid",
@@ -65,6 +67,7 @@ for i in ipairs(source_list) do
 		sounds = default.node_sound_water_defaults(),
 	})
 
+	--Register flowing water nodes
 	core.register_node("rainbow_source:"..name.."_water_flowing", {
 		description = description.." Flowing Water",
 		drawtype = "flowingliquid",
@@ -111,7 +114,11 @@ for i in ipairs(source_list) do
 		sounds = default.node_sound_water_defaults(),
 	})
 
-	--Buckets (new feature by DustyDave961)
+	--[[-------------------------------------
+	--Buckets (new feature by DustyDave961)--
+	---------------------------------------]]
+
+	--Register buckets with fluid_lib function
 	if core.get_modpath("bucket_compat") then
 		fluid_lib.register_liquid(
 			"rainbow_source:"..name.."_water_source",
@@ -121,7 +128,8 @@ for i in ipairs(source_list) do
 			description.." Water Bucket",
 			{tool = 1, water_bucket = 1}
 		)
-
+		
+		--Register crafting recipes if dye is present and crafting setting is enabled
 		if core.get_modpath("dye") and core.settings:get_bool("enable_colored_bucket_crafts") then
 			core.register_craft({
 				output = "rainbow_source:bucket_"..name.."_water",
@@ -131,6 +139,7 @@ for i in ipairs(source_list) do
 					}
 			})
 		end
+	--Add buckets even without bucket_compat
 	elseif core.get_modpath("bucket") then
 		bucket.register_liquid(
 			"rainbow_source:blue_water_source",
