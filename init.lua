@@ -128,9 +128,22 @@ for i in ipairs(source_list) do
 			description.." Water Bucket",
 			{tool = 1, water_bucket = 1}
 		)
-		
-		--Register crafting recipes if dye is present and crafting setting is enabled
-		if core.get_modpath("dye") and core.settings:get_bool("enable_colored_bucket_crafts") then
+	
+	--Add buckets even without bucket_compat
+	elseif core.get_modpath("bucket") then
+		bucket.register_liquid(
+			"rainbow_source:"..name.."_water_source",
+			"rainbow_source:"..name.."_water_flowing",
+			"rainbow_source:bucket_"..name.."_water",
+			"bucket.png^(bucket_mask.png^[multiply:#"..colour..")",
+			description.." Water Bucket",
+			{tool = 1, water_bucket = 1}
+		)
+	end
+			
+	--Register crafting recipes if dye is present and crafting setting is enabled
+	if core.get_modpath("dye") and core.settings:get_bool("enable_colored_bucket_crafts") then
+		if core.get_modpath("bucket") or core.get_modpath("bucket_compat") then
 			core.register_craft({
 				output = "rainbow_source:bucket_"..name.."_water",
 				recipe = {
@@ -139,24 +152,5 @@ for i in ipairs(source_list) do
 					}
 			})
 		end
-	--Add buckets even without bucket_compat
-	elseif core.get_modpath("bucket") then
-		bucket.register_liquid(
-			"rainbow_source:blue_water_source",
-			"rainbow_source:blue_water_flowing",
-			"rainbow_source:bucket_blue_water",
-			"bucket_water.png",
-			"Blue Water Bucket",
-			{tool = 1, water_bucket = 1}
-		)		
-		
-		bucket.register_liquid(
-			"rainbow_source:orange_water_source",
-			"rainbow_source:orange_water_flowing",
-			"rainbow_source:bucket_orange_water",
-			"bucket_lava.png",
-			"Orange Water Bucket",
-			{tool = 1, water_bucket = 1}
-		)
 	end
 end
