@@ -10,6 +10,10 @@ Based on textures by RealBadAngel from minetest_game (CC BY-SA 3.0).
 bucket_mask.png
 Taken from fluid_lib by IcyDiamond (MIT)
 
+rs_bucket.png
+Taken from Minetest Game bucket mod. Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+Copyright (C) 2015-2016 ElementW
+
 
 ## Code
 License: MIT (https://opensource.org/licenses/MIT)
