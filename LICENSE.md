@@ -1,12 +1,6 @@
 # MIT License
 
 ## Textures
-rs_water.png
-Based on default_water.png by Cisoun from minetest_game (CC BY-SA 3.0).
-
-rs_water_flowing_animated.png and rs_water_source_animated.png
-Based on textures by RealBadAngel from minetest_game (CC BY-SA 3.0).
-
 bucket_mask.png
 Taken from fluid_lib by IcyDiamond (MIT)
 
