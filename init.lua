@@ -135,7 +135,7 @@ for i in ipairs(source_list) do
 			"rainbow_source:"..name.."_water_source",
 			"rainbow_source:"..name.."_water_flowing",
 			"rainbow_source:bucket_"..name.."_water",
-			"rs_bucket.png^(bucket_mask.png^[hsl:0:-100:0^[colorize:#"..colour..":99)",
+			"rs_bucket.png^(bucket_mask.png^[colorize:#"..colour..":70)",
 			description.." Water Bucket",
 			{tool = 1, water_bucket = 1}
 		)
