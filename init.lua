@@ -71,7 +71,7 @@ for i in ipairs(source_list) do
 	core.register_node("rainbow_source:"..name.."_water_flowing", {
 		description = description.." Flowing Water",
 		drawtype = "flowingliquid",
-		tiles = {"default_water.png^[hsl:0:-100:0^[colorize:#"..colour},
+		tiles = {"default_water.png^[hsl:0:-100:0^[colorize:#"..colour..":70"},
 		special_tiles = {
 			{
 				name = "default_water_flowing_animated.png^[hsl:0:-100:0^[colorize:#"..colour..":70",
@@ -135,7 +135,7 @@ for i in ipairs(source_list) do
 			"rainbow_source:"..name.."_water_source",
 			"rainbow_source:"..name.."_water_flowing",
 			"rainbow_source:bucket_"..name.."_water",
-			"rs_bucket.png^(bucket_mask.png^[multiply:#"..colour..")",
+			"rs_bucket.png^(bucket_mask.png^[hsl:0:-100:0^[colorize:#"..colour..":99)",
 			description.." Water Bucket",
 			{tool = 1, water_bucket = 1}
 		)
