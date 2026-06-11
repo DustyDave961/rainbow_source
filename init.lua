@@ -71,7 +71,7 @@ for i in ipairs(source_list) do
 	core.register_node("rainbow_source:"..name.."_water_flowing", {
 		description = description.." Flowing Water",
 		drawtype = "flowingliquid",
-		tiles = {"rs_water.png^[colorize:#"..colour},
+		tiles = {"default_water.png^[hsl:0:-100:0^[colorize:#"..colour},
 		special_tiles = {
 			{
 				name = "default_water_flowing_animated.png^[hsl:0:-100:0^[colorize:#"..colour..":70",
