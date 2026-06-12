@@ -2,7 +2,7 @@
 
 ## Textures
 bucket_mask.png
-Taken from fluid_lib by IcyDiamond (MIT)
+Taken from fluid_lib by IcyDiamond (MIT). Altered by a-tour-ist aka tour to match water textures
 
 rs_bucket.png
 Taken from Minetest Game bucket mod. Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
@@ -21,6 +21,7 @@ By Shara RedCat
 The MIT License (MIT)
 
 Copyright (c) 2017 Shara RedCat
+Copyright (c) 2026 DustyDave961
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
