@@ -1,1 +1,1 @@
-enable_colored_bucket_crafts (Craft colored water buckets.) bool false
+enable_colored_bucket_crafts (Add crafting recipes for colored water buckets. Recipes are disabled by default.) bool false
