@@ -12,6 +12,8 @@ local source_list = {
 	{"frosted", "Frosted", "FFFFFF", 255, 255, 255, "white"}
 }
 
+local liquid_renewable = core.settings:get_bool("rainbow_source.liquid_renewable", false)
+
 for i in ipairs(source_list) do
 	local name = source_list[i][1]
 	local description = source_list[i][2]
@@ -61,6 +63,7 @@ for i in ipairs(source_list) do
 		liquid_alternative_flowing = "rainbow_source:"..name.."_water_flowing",
 		liquid_alternative_source = "rainbow_source:"..name.."_water_source",
 		liquid_viscosity = 1,
+		liquid_renewable = liquid_renewable,
 		post_effect_color = {a = 50, r = red, g = green, b = blue},
 		groups = {water = 3, liquid = 3, puts_out_fire = 1,
 				cools_lava = 1},
@@ -108,6 +111,7 @@ for i in ipairs(source_list) do
 		liquid_alternative_flowing = "rainbow_source:"..name.."_water_flowing",
 		liquid_alternative_source = "rainbow_source:"..name.."_water_source",
 		liquid_viscosity = 1,
+		liquid_renewable = liquid_renewable,
 		post_effect_color = {a = 50, r = red, g = green, b = blue},
 		groups = {water = 3, liquid = 3, puts_out_fire = 1,
 			not_in_creative_inventory = 1, cools_lava = 1},
