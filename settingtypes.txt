@@ -1,4 +1,4 @@
-enable_colored_bucket_crafts (Add crafting recipes for colored water buckets. Recipes are disabled by default.) bool false
+rainbow_source.bucket_crafts (Add crafting recipes for colored water buckets. Recipes are disabled by default.) bool false
 
 
 rainbow_source.liquid_renewable (new source can be created by >= 2 adjacent sources) bool false
