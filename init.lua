@@ -1,3 +1,6 @@
+--table in case setting names break something
+rainbow_source = {}
+
 --Water definitions
 local source_list = {
 	{"black", "Darkened", "292421", 40, 36, 33},
@@ -12,6 +15,7 @@ local source_list = {
 	{"frosted", "Frosted", "FFFFFF", 255, 255, 255, "white"}
 }
 
+--renewable liquid setting value for Your Land thanks to tour_ist
 local liquid_renewable = core.settings:get_bool("rainbow_source.liquid_renewable", false)
 
 for i in ipairs(source_list) do
@@ -23,7 +27,7 @@ for i in ipairs(source_list) do
 	local blue = source_list[i][6]
 	local dye = source_list[i][7] or name
 
-	--Register water source nodes
+	--Register water source nodes. New textures thanks to tour_ist
 	core.register_node("rainbow_source:"..name.."_water_source", {
 		description = description.." Water Source",
 		drawtype = "liquid",
@@ -146,7 +150,7 @@ for i in ipairs(source_list) do
 	end
 			
 	--Register crafting recipes if dye is present and crafting setting is enabled
-	if core.get_modpath("dye") and core.settings:get_bool("enable_colored_bucket_crafts") then
+	if core.get_modpath("dye") and core.settings:get_bool("rainbow_source.bucket_crafts") then
 		if core.get_modpath("bucket") or core.get_modpath("bucket_compat") then
 			core.register_craft({
 				output = "rainbow_source:bucket_"..name.."_water",
